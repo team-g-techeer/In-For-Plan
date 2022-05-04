@@ -1,14 +1,24 @@
 package com.techeer.inforplanbackend.domain.user.domain.repository;
 
-import com.techeer.inforplanbackend.domain.user.domain.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-
+import org.springframework.stereotype.Repository;
+import com.techeer.inforplanbackend.domain.user.domain.entity.User;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
-public interface UserRepository extends JpaRepository<User, String> {
-    //Optional User<>
-    List<User> findByEmail(String email);
+@Repository
+public class UserRepository {
 
-    User findById(long id);
+    @PersistenceContext
+    private EntityManager em;
+
+    public Long save(User user) {
+        em.persist(user);
+        return user.getId();
+    }
+
+    public User find(String email){
+        return em.find(User.class, email);
+    }
     
 }
