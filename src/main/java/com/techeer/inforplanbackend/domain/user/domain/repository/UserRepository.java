@@ -1,10 +1,9 @@
 package com.techeer.inforplanbackend.domain.user.domain.repository;
 
 import org.springframework.stereotype.Repository;
-import com.techeer.inforplanbackend.domain.user.domain.entity.User;
+import com.techeer.inforplanbackend.domain.user.domain.entity.Users;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.List;
 
 @Repository
 public class UserRepository {
@@ -12,13 +11,13 @@ public class UserRepository {
     @PersistenceContext
     private EntityManager em;
 
-    public Long save(User user) {
+    public Long save(Users user) {
         em.persist(user);
         return user.getId();
     }
 
-    public User find(String email){
-        return em.find(User.class, email);
+    public Users find(String email){
+        return em.find(Users.class, email);
     }
     
 }
