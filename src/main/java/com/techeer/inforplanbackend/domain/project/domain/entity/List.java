@@ -18,7 +18,7 @@ public class List {
 
     private java.sql.Date create_at;
 
-    private java.sql.Date updated_at;
+//    private java.sql.Date updated_at;
 
     @OneToMany(mappedBy = "list")
     private List<Task> tasks = new ArrayList<>();
