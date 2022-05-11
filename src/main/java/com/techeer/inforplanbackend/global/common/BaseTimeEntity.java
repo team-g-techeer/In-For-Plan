@@ -1,4 +1,4 @@
-package com.techeer.inforplanbackend.domain.user.domain.entity;
+package com.techeer.inforplanbackend.global.common;
 
 import lombok.Getter;
 import org.hibernate.annotations.CreationTimestamp;

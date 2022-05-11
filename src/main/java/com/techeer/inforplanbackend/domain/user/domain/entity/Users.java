@@ -1,6 +1,7 @@
 package com.techeer.inforplanbackend.domain.user.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.techeer.inforplanbackend.global.common.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +13,7 @@ import java.sql.Date;
 @Getter
 @Entity
 @RequiredArgsConstructor
-public class Users extends BaseTimeEntity{
+public class Users extends BaseTimeEntity {
 
     @Id
     @GeneratedValue
