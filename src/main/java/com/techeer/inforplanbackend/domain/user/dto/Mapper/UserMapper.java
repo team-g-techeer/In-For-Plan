@@ -25,14 +25,15 @@ public class UserMapper {
                 .build();
     }
 
-    public UserResponseDto fromEntity(Users user){
+    public UserResponseDto fromEntity(Users users){
         return UserResponseDto.builder()
-                .id(user.getId())
-                .email(user.getEmail())
-                .name(user.getName())
-                .url(user.getUrl())
-                .phoneNumber(user.getPhoneNumber())
-                .birthDate(user.getBirthDate())
+                .id(users.getId())
+                .email(users.getEmail())
+                .name(users.getName())
+                .url(users.getUrl())
+                .password(users.getPassword())
+                .phoneNumber(users.getPhoneNumber())
+                .birthDate(users.getBirthDate())
                 .build();
     }
 }
