@@ -9,14 +9,7 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
-public interface ProjectRepository extends JpaRepository<Project, Long> {
 
-    public Optional<Project> findById(Long p_id);
+public interface  ProjectRepository extends JpaRepository<Project, Long> { //JpaRepository를 상속시 기본 CRUD 메소드 생성됨
 
-    public List<Project> findAll();
-
-    public void deleteById(Long p_id);
-
-    public Project save(Project project);
 }
