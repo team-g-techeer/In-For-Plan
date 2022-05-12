@@ -27,4 +27,11 @@ public class UserController {
 
         return userMapper.fromEntity(user);
     }
+
+    @GetMapping("/{id}")
+    public UserResponseDto findById(@PathVariable Long id){
+
+        return userService.findById(id);
+
+    }
 }

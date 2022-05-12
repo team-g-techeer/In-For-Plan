@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    include:
+      - h2
+#      - postgre
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          sql: DEBUG
+          descriptor:
+            sql: DEBUG
