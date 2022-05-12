@@ -1,4 +1,4 @@
-package com.techeer.inforplanbackend.domain.project.domain.entity;
+package com.techeer.inforplanbackend.domain.project.entity;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

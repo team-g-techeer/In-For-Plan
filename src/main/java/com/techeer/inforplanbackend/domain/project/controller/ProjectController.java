@@ -1,15 +1,12 @@
 package com.techeer.inforplanbackend.domain.project.controller;
-import com.techeer.inforplanbackend.domain.project.domain.entity.Project;
-import com.techeer.inforplanbackend.domain.project.domain.repository.ProjectRepository;
-import com.techeer.inforplanbackend.domain.project.dto.ProjectDto;
+import com.techeer.inforplanbackend.domain.project.dto.Request.ProjectRequestDto;
+import com.techeer.inforplanbackend.domain.project.dto.Response.ProjectResponseDto;
+import com.techeer.inforplanbackend.domain.project.entity.Project;
 import com.techeer.inforplanbackend.domain.project.service.ProjectService;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1")
@@ -19,7 +16,7 @@ public class ProjectController {
     private ProjectService projectService;
 
     @PostMapping("/projects")
-    public Long saveProject(@RequestBody ProjectDto dto)
+    public Long saveProject(@RequestBody ProjectRequestDto dto)
     {
         return projectService.save(dto);
     }
@@ -32,7 +29,7 @@ public class ProjectController {
     }
 
     @PutMapping("/projects/{project_id}")
-    public ResponseEntity update(@PathVariable("project_id")Long id,@RequestBody ProjectDto dto)
+    public ResponseEntity update(@PathVariable("project_id")Long id, @RequestBody ProjectResponseDto dto)
     {
         projectService.updateProject(id, dto);
         return ResponseEntity.ok(id);
@@ -40,7 +37,7 @@ public class ProjectController {
 
     @GetMapping("/projects/all")
     public List<Project> findall(){
-        List<Project> all = this.projectService.findall();
+        List<Project> all = projectService.findall();
         return all;
     }
 

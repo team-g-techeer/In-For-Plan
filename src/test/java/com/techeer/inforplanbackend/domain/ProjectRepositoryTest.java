@@ -1,7 +1,7 @@
 package com.techeer.inforplanbackend.domain;
 
-import com.techeer.inforplanbackend.domain.project.domain.entity.Project;
-import com.techeer.inforplanbackend.domain.project.domain.repository.ProjectRepository;
+import com.techeer.inforplanbackend.domain.project.entity.Project;
+import com.techeer.inforplanbackend.domain.project.repository.ProjectRepository;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,8 +1,6 @@
-package com.techeer.inforplanbackend.domain.project.domain.entity;
+package com.techeer.inforplanbackend.domain.project.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
