@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1")
@@ -39,6 +40,13 @@ public class ProjectController {
     public List<Project> findall(){
         List<Project> all = projectService.findall();
         return all;
+    }
+
+    @GetMapping("/projects/{project_id}")
+    public Optional<Project> findbyid(@PathVariable("project_id")Long id){
+
+        Optional<Project> project = projectService.findbyid(id);
+        return project;
     }
 
     @GetMapping ("/test")

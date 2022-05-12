@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 @Service
@@ -46,6 +47,11 @@ public class ProjectService {
     public List<Project> findall()
     {
         return projectRepository.findAll();
+    }
+
+    public Optional<Project> findbyid(Long id)
+    {
+        return projectRepository.findById(id);
     }
 
 
