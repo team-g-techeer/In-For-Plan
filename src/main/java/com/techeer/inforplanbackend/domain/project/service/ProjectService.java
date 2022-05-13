@@ -6,8 +6,10 @@ import com.techeer.inforplanbackend.domain.project.dto.Response.ProjectResponseD
 import com.techeer.inforplanbackend.domain.project.entity.Project;
 import com.techeer.inforplanbackend.domain.project.repository.ProjectRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -48,10 +50,22 @@ public class ProjectService {
     {
         return projectRepository.findAll();
     }
-
+    @Transactional
     public Optional<Project> findbyid(Long id)
     {
-        return projectRepository.findById(id);
+        try{
+            Optional<Project> result = projectRepository.findById(id);
+            if(result.isPresent())
+            {
+                return result;
+            }else
+            {
+                return Optional.ofNullable(result.orElse(null));
+            }
+        }catch (Exception e)
+        {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Invalid Request");
+        }
     }
 
 
