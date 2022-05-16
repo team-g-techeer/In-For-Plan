@@ -1,4 +1,4 @@
-package com.techeer.inforplanbackend.domain.project.dto;
+package com.techeer.inforplanbackend.domain.list.dto;
 
 import java.time.LocalDate;
 

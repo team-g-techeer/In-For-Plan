@@ -1,4 +1,7 @@
-package com.techeer.inforplanbackend.domain.project.domain.entity;
+package com.techeer.inforplanbackend.domain.list.entity;
+
+import com.techeer.inforplanbackend.domain.project.entity.Project;
+import com.techeer.inforplanbackend.domain.project.domain.entity.Task;
 
 import javax.persistence.*;
 import java.util.ArrayList;

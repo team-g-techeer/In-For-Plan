@@ -1,7 +1,6 @@
 package com.techeer.inforplanbackend.domain.project.controller;
 
-import com.techeer.inforplanbackend.domain.project.domain.entity.Project;
-import com.techeer.inforplanbackend.domain.project.domain.repository.ProjectRepository;
+import com.techeer.inforplanbackend.domain.project.entity.Project;
 import com.techeer.inforplanbackend.domain.project.service.ProjectService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
