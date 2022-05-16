@@ -1,4 +1,5 @@
 package com.techeer.inforplanbackend.domain.project.controller;
+import com.techeer.inforplanbackend.domain.project.dto.Mapper.ProjectMapper;
 import com.techeer.inforplanbackend.domain.project.dto.Request.ProjectRequestDto;
 import com.techeer.inforplanbackend.domain.project.dto.Response.ProjectResponseDto;
 import com.techeer.inforplanbackend.domain.project.entity.Project;
@@ -15,11 +16,12 @@ import java.util.Optional;
 public class ProjectController {
 
     private ProjectService projectService;
-
+    private ProjectMapper projectMapper;
     @PostMapping("/projects")
-    public Long saveProject(@RequestBody ProjectRequestDto dto)
+    public ProjectResponseDto saveProject(@RequestBody ProjectRequestDto dto)
     {
-        return projectService.save(dto);
+        Project project = projectService.save(dto);
+        return projectMapper.fromEntity(project);
     }
 
     @DeleteMapping("/projects/{project_id}")

@@ -18,14 +18,14 @@ import java.util.Optional;
 @Service
 public class ProjectService {
 
-    private ProjectRepository projectRepository;
+    private final ProjectRepository projectRepository;
     public final ProjectMapper projectMapper;
 
     @Transactional
-    public Long save(ProjectRequestDto dto)
+    public Project save(ProjectRequestDto dto)
     {
-        Project entity = projectRepository.save(projectMapper.toEntity(dto));
-        return entity.getId();
+        return projectRepository.save(projectMapper.toEntity(dto));
+
     }
 
     @Transactional
