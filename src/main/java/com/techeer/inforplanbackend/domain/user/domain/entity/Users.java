@@ -7,13 +7,15 @@ import lombok.RequiredArgsConstructor;
 
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Getter
 @Entity
 @RequiredArgsConstructor
-public class Users {
+public class Users extends BaseTimeEntity{
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "id")
     private Long id;
 
@@ -34,31 +36,15 @@ public class Users {
     private String url;
 
     @Column(name = "birth_date", nullable = true)
-    private java.sql.Date birthDate;
-
-    @Column(name = "create_at", nullable = false)
-    private java.sql.Date created_at;
-
-    @Column(name = "update_at")
-    private java.sql.Date update_at;
+    private Date birthDate;
 
     @Builder
-    public Users(String email, String password, String name, String phoneNumber, String url, java.sql.Date birthDate, java.sql.Date created_at, java.sql.Date updated_at) {
+    public Users(String email, String password, String name, String phoneNumber, String url, Date birthDate) {
         this.email = email;
         this.password = password;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.url = url;
         this.birthDate = birthDate;
-        this.created_at = created_at;
-        this.update_at = updated_at;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getEmail() {
-        return email;
     }
 }
