@@ -3,6 +3,7 @@ package com.techeer.inforplanbackend.domain.members_project.entity;
 import com.techeer.inforplanbackend.domain.project.entity.Project;
 import com.techeer.inforplanbackend.domain.user.domain.entity.Users;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -14,7 +15,7 @@ import javax.persistence.*;
 public class Members_Project {
 
     @Id
-    @Column(name = "MP_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -24,6 +25,15 @@ public class Members_Project {
     @ManyToOne
     @JoinColumn(name ="project_id")
     private Project project;
+
+
+    @Builder
+    public Members_Project(Long id,Users users,Project project)
+    {
+        this.id = id;
+        this.users = users;
+        this.project = project;
+    }
 
 
 
