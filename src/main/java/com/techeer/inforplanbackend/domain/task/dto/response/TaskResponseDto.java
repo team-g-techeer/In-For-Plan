@@ -1,14 +1,12 @@
 package com.techeer.inforplanbackend.domain.project.dto.response;
 
-import com.techeer.inforplanbackend.domain.project.domain.entity.List;
-import com.techeer.inforplanbackend.domain.project.domain.entity.Project;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
 import java.time.LocalDate;
 
-@Getter
+@Getter   //Dto엔 getter 안됨
 @Builder
 @AllArgsConstructor    //클래스에 존재하는 모든 필드에 대한 생성자를 자동으로 생성해줌
 public class TaskResponseDto {

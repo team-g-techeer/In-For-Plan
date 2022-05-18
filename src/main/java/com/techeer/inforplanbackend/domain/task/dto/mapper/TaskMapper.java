@@ -4,19 +4,17 @@ import com.techeer.inforplanbackend.domain.project.domain.entity.Task;
 import com.techeer.inforplanbackend.domain.project.dto.response.TaskResponseDto;
 import com.techeer.inforplanbackend.domain.project.repository.TaskRepository;
 import com.techeer.inforplanbackend.domain.project.dto.request.TaskRequestDto;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class TaskMapper {
 
     private final TaskRepository taskRepository;
 
-    public TaskMapper(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
-    }
-
-    public Task toEntity(TaskRequestDto taskRequestDto) {   //요청받은 DTO로부터 엔티티로 값을 줌
+    public Task toEntity(TaskRequestDto taskRequestDto) {  //요청받은 DTO(requestDto)로부터 엔티티로 값을 줌
         return Task.builder()
                 .list_id(taskRequestDto.list_id)
                 .project_id(taskRequestDto.project_id)
@@ -28,7 +26,7 @@ public class TaskMapper {
                 .build();
     }
 
-    public TaskResponseDto fromEntity(Task task) {    //엔티티로부터 응답 DTO로 값을 가져온다
+    public TaskResponseDto fromEntity(Task task) {  //엔티티로부터 응답 DTO(responseDto)로 값을 가져온다
         return TaskResponseDto.builder()
                 .task_id(task.getTask_id())
                 .list_id(task.getList_id())
