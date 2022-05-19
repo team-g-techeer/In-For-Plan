@@ -5,7 +5,9 @@ import com.techeer.inforplanbackend.domain.list.dto.Mapper.BoardListMapper;
 import com.techeer.inforplanbackend.domain.list.dto.Request.BoardListRequestDto;
 import com.techeer.inforplanbackend.domain.list.dto.Response.BoardListResponseDto;
 import com.techeer.inforplanbackend.domain.list.service.BoardListService;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -17,12 +19,15 @@ import java.util.stream.Collectors;
 
 
 @RestController
-@RequestMapping("api/v1/projects/{project-id}/lists")
-@RequiredArgsConstructor
+@RequestMapping("api/v1/projects/lists")
+@AllArgsConstructor
 public class BoardListController {
 
-    private final BoardListService boardListService;
-    private final BoardListMapper boardlistMapper;
+
+    @Autowired
+    private BoardListService boardListService;
+    @Autowired
+    private BoardListMapper boardlistMapper;
 
     @GetMapping
     public ResponseEntity<List<BoardListResponseDto>> getList() {
@@ -42,20 +47,22 @@ public class BoardListController {
         return boardlistMapper.fromEntity(boardList);
     }
 
-//
-//    @PostMapping
-//    public ResponseEntity<BoardListResponseDto> create(@Valid @RequestBody BoardListRequestDto requestDto) {
-//
-//        BoardList entity = boardListService.create(boardlistMapper.toEntity(requestDto));
-//
-////        return boardlistMapper.fromEntity(entity);
-//        return ResponseEntity
-//                .created(WebMvcLinkBuilder
-//                        .linkTo(this.getClass())
-//                        .slash(entity.getList_id())
-//                        .toUri()
-//                )
-//                .body(boardlistMapper.fromEntity(entity));
-//    }
+    @PutMapping("/{listId}")
+    public ResponseEntity update(@PathVariable Long listId, @Valid @RequestBody BoardListResponseDto dto) {
+        boardListService.update(listId, dto);
+        return ResponseEntity
+                .ok(listId);
+    }
 
+    @DeleteMapping("/{listId}")
+    public ResponseEntity<Void> delete(@PathVariable Long listId) {
+
+        boardListService.delete(listId);
+        return ResponseEntity
+                .ok()
+                .body(null);
+    }
 }
+
+
+

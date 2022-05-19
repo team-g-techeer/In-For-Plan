@@ -1,6 +1,7 @@
 package com.techeer.inforplanbackend.domain.list.domain.entity;
 
 import com.techeer.inforplanbackend.domain.project.domain.entity.Project;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,28 +11,26 @@ import java.sql.Date;
 
 @Entity
 @Getter
-@NoArgsConstructor
-public class BoardList {
+@AllArgsConstructor
+public class BoardList extends BaseTimeEntity{
     @Id
     @GeneratedValue
-    @Column(name = "list_id")
-    private Long list_id;
+    @Column(name = "listId")
+    private Long listId;
 
 //    @ManyToOne
 //    @JoinColumn(name = "project_id")
 //    private Project project;
 
-    private String list_title;
-
-    private Date created_at;
-
-    private Date updated_at;
+    private String boardList_title;
 
     @Builder
     public BoardList(String list_title, Date created_at, Date updated_at, Project project) {
-        this.list_title = list_title;
-        this.created_at =created_at;
-        this.updated_at = updated_at;
+        this.boardList_title = list_title;
 //        this.project = project;
+    }
+
+    public void update(String boardList_title){
+        this.boardList_title = boardList_title;
     }
 }

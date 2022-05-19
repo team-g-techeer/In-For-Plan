@@ -19,8 +19,4 @@ public class BoardListRequestDto {
 
     @Size(max = 200)
     private String List_title;
-
-    private java.sql.Date created_at;
-
-    private java.sql.Date updated_at;
 }
