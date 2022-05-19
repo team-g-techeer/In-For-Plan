@@ -13,7 +13,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("api/v1")
 @AllArgsConstructor
-public class ProjectController {
+public class    ProjectController {
 
     private ProjectService projectService;
     private ProjectMapper projectMapper;
@@ -51,9 +51,4 @@ public class ProjectController {
         return project;
     }
 
-    @GetMapping ("/test")
-    public String TEST()
-    {
-        return "Hello";
-    }
 }

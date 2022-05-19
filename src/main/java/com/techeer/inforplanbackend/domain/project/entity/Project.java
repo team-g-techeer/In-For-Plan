@@ -1,12 +1,13 @@
 package com.techeer.inforplanbackend.domain.project.entity;
 
+import com.techeer.inforplanbackend.domain.members_project.entity.Members_Project;
+import com.techeer.inforplanbackend.domain.user.domain.entity.Users;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter //클래스내의 모든 필드의 Getter 메소드를 생성
 @Entity //테이블과 링크될 클래스임을 나타냄
@@ -15,23 +16,21 @@ import java.sql.Date;
 public class Project extends BaseTimeEntity {
 
     @Id @GeneratedValue //@Id:해당 테이블의 pk임을 나타냄 @GeneratedValue : PK의 생성 규칙을 나타냄
-    @Column(name= "id")
+    @Column(name= "project_id")
     private Long id;
 
     @Column(name = "project_title", nullable = false)
     private String project_title;
 
-//    @Column(name = "created_at")
-//    private String created_at;
-//
-//    @Column(name = "updated_at")
-//    private String updated_at;
-//
-      @Column(name = "url", nullable = false)
+    @Column(name = "url", nullable = false)
       private String url;
-//
-      @Column(name = "meet_date") //yyyy-mm-dd
+
+    @Column(name = "meet_date") //yyyy-mm-dd
       private Date meet_date;
+
+    @OneToMany(mappedBy = "project")
+    private List<Members_Project> Members_project = new ArrayList<Members_Project>();
+
 
     @Builder
     public Project(String project_title,String url,Date meet_date)
