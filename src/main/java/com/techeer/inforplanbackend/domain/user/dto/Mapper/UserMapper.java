@@ -12,8 +12,6 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class UserMapper {
 
-    private final UserRepository userRepository;
-
     public Users toEntity(UserRequestDto userRequestDto){
         return Users.builder()
                 .email(userRequestDto.email)
