@@ -1,8 +1,8 @@
 spring:
   profiles:
     include:
-      - h2
-#      - postgre
+      #- h2
+      - postgre
 
   jpa:
     hibernate:
