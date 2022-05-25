@@ -33,4 +33,8 @@ public class BoardList extends  BaseTimeEntity{
     public BoardList(String boardList_title){
         this.boardList_title = boardList_title;
     }
+
+    public void update(String boardList_title){
+        this.boardList_title = boardList_title;
+    }
 }

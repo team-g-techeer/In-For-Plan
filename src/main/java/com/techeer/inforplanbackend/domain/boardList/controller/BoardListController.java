@@ -40,8 +40,14 @@ public class BoardListController {
     }
 
     @DeleteMapping("/boardLists/{boardList-id}")
-    public ResponseEntity deleteBoardList(@PathVariable("boardList_id") Long id){
+    public ResponseEntity deleteBoardList(@PathVariable("boardList-id") Long id){
         boardListService.deleteBoardList(id);
+        return ResponseEntity.ok(id);
+    }
+
+    @PutMapping("/boardLists/{boardList-id}")
+    public ResponseEntity update(@PathVariable("boardList-id")Long id, @RequestBody BoardListResponseDto dto){
+        boardListService.updateBoardList(id, dto);
         return ResponseEntity.ok(id);
     }
 

@@ -2,6 +2,7 @@ package com.techeer.inforplanbackend.domain.boardList.service;
 
 import com.techeer.inforplanbackend.domain.boardList.dto.Mapper.BoardListMapper;
 import com.techeer.inforplanbackend.domain.boardList.dto.Request.BoardListRequestDto;
+import com.techeer.inforplanbackend.domain.boardList.dto.Response.BoardListResponseDto;
 import com.techeer.inforplanbackend.domain.boardList.entity.BoardList;
 import com.techeer.inforplanbackend.domain.boardList.repository.BoardListRepository;
 import lombok.AllArgsConstructor;
@@ -52,6 +53,16 @@ public class BoardListService {
     @Transactional
     public void deleteBoardList(Long id){
         boardListRepository.deleteById(id);
+    }
+
+    @Transactional
+    public Long updateBoardList(Long id, BoardListResponseDto dto){
+        BoardList boardList = boardListRepository.findById(id).orElseThrow(()->
+                new IllegalArgumentException("해당 리스트가 없습니다."));
+
+        boardList.update(dto.getBoardList_title());
+
+        return id;
     }
 
 
