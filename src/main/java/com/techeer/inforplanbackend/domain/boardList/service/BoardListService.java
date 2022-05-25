@@ -27,5 +27,27 @@ public class BoardListService {
         return boardListRepository.save(boardListMapper.toEntity(dto));
     }
 
+    @Transactional
+    public List<BoardList> findall(){
+        return boardListRepository.findAll();
+    }
+
+    @Transactional
+    public Optional<BoardList> findbyid(Long id){
+        try{
+            Optional<BoardList> result = boardListRepository.findById(id);
+            if(result.isPresent())
+            {
+                return result;
+            } else
+            {
+                return Optional.ofNullable(result.orElse(null));
+            }
+        }
+        catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Request");
+        }
+    }
+
 
 }

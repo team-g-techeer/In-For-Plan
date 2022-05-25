@@ -25,4 +25,18 @@ public class BoardListController {
         BoardList boardList = boardListService.save(dto);
         return boardListMapper.fromEntity(boardList);
     }
+
+    @GetMapping("/boardLists")
+    public List<BoardList> findall(){
+        List<BoardList> all = boardListService.findall();
+        return all;
+    }
+
+    @GetMapping("/boardLists/{boardList_id}")
+    public Optional<BoardList> findbyid(@PathVariable("boardList_id")Long id){
+
+        Optional<BoardList> boardList = boardListService.findbyid(id);
+        return boardList;
+    }
+
 }
