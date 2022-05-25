@@ -3,6 +3,7 @@ spring:
     include:
       #- h2
       - postgre
+      - oauth
 
   jpa:
     hibernate:
