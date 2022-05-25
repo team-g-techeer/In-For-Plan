@@ -49,5 +49,10 @@ public class BoardListService {
         }
     }
 
+    @Transactional
+    public void deleteBoardList(Long id){
+        boardListRepository.deleteById(id);
+    }
+
 
 }

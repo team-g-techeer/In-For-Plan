@@ -39,4 +39,10 @@ public class BoardListController {
         return boardList;
     }
 
+    @DeleteMapping("/boardLists/{boardList-id}")
+    public ResponseEntity deleteBoardList(@PathVariable("boardList_id") Long id){
+        boardListService.deleteBoardList(id);
+        return ResponseEntity.ok(id);
+    }
+
 }
