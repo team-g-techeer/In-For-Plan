@@ -1,8 +1,11 @@
 package com.techeer.inforplanbackend.domain.project.repository;
 
 import com.techeer.inforplanbackend.domain.project.domain.entity.Task;
+import com.techeer.inforplanbackend.domain.project.dto.request.TaskRequestDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
@@ -16,4 +19,6 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
         count() : 레코드 개수
         delete() : 레코드 삭제
      */
+
+//    public Task update(Long task_id, TaskRequestDto taskRequestDto);
 }
