@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping(value = "/api/v1/projects/{project_id}", method={RequestMethod.GET, RequestMethod.POST})
+@RequestMapping(value = "/api/v1/projects/{project_id}")
 public class TaskController {
     public final TaskService taskService;
     public final TaskMapper taskMapper;
@@ -38,13 +38,13 @@ public class TaskController {
         return "삭제된 task의 id : " + task_id;
     }
 
-    @GetMapping("/tasks/2/{task_id}")
+    @GetMapping("/tasks/{task_id}")
     @ResponseBody
     public TaskResponseDto find(@PathVariable Long task_id) {
         return taskService.findById(task_id);
     }
 
-    @PutMapping("/tasks/3/{task_id}")
+    @PutMapping("/tasks/{task_id}")
     @ResponseBody
     public TaskResponseDto update(@PathVariable Long task_id, @RequestBody TaskRequestDto taskRequestDto) {
         taskService.update(task_id, taskRequestDto);
