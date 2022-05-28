@@ -34,6 +34,7 @@ public class TaskService {
         taskRepository.deleteById(task_id);
     }
 
+    @
     public TaskResponseDto findById(Long task_id) {
         Task task = taskRepository.findById(task_id)
                 .orElseThrow(() -> new IllegalArgumentException("해당하는 task가 없습니다."));
