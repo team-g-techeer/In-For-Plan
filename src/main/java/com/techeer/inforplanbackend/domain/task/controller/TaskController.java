@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping(value = "/api/v1/projects/{project_id}")
+@RequestMapping(value = "/api/v1")
 public class TaskController {
     public final TaskService taskService;
     public final TaskMapper taskMapper;
