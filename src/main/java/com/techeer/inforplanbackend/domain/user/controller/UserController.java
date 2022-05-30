@@ -48,11 +48,4 @@ public class UserController {
         final String token = jwtTokenUtil.generateToken(user.getEmail());
         return ResponseEntity.ok(new JwtResponse(token));
     }
-//    @PostMapping("/login")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public UserResponseDto Login(@Validated @RequestBody UserLoginRequestDto userLoginRequestDto) {
-//
-//
-//
-//    }
 }
