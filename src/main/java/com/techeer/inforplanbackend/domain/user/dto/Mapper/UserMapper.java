@@ -2,8 +2,7 @@ package com.techeer.inforplanbackend.domain.user.dto.Mapper;
 
 
 import com.techeer.inforplanbackend.domain.user.domain.entity.Users;
-import com.techeer.inforplanbackend.domain.user.domain.repository.UserRepository;
-import com.techeer.inforplanbackend.domain.user.dto.Request.UserRequestDto;
+import com.techeer.inforplanbackend.domain.user.dto.Request.UserCreateRequestDto;
 import com.techeer.inforplanbackend.domain.user.dto.Response.UserResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class UserMapper {
 
-    public Users toEntity(UserRequestDto userRequestDto){
+    public Users toEntity(UserCreateRequestDto userRequestDto){
         return Users.builder()
                 .email(userRequestDto.email)
                 .name(userRequestDto.name)

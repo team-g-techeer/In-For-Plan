@@ -9,7 +9,7 @@ import java.sql.Date;
 @Data
 @Builder
 @AllArgsConstructor
-public class UserRequestDto {
+public class UserCreateRequestDto {
 
     public String email;
 

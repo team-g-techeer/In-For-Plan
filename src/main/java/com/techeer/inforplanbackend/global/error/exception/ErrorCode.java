@@ -46,4 +46,7 @@ public enum ErrorCode {
     }
 
 
+    public String message() {
+        return message;
+    }
 }
