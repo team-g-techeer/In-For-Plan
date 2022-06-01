@@ -25,13 +25,14 @@ public class BoardList extends  BaseTimeEntity{
     @Column(name = "boardList_title", nullable = false)
     private String boardList_title;
 
-//    @ManyToOne
-//    @JoinColumn(name = "project_id")
-//    private Project project;
+    @ManyToOne
+    @JoinColumn(name = "project_id")
+    private Project project;
 
     @Builder
-    public BoardList(String boardList_title){
+    public BoardList(String boardList_title, Project project){
         this.boardList_title = boardList_title;
+        this.project = project;
     }
 
     public void update(String boardList_title){
