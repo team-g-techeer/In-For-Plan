@@ -1,11 +1,10 @@
-package com.techeer.inforplanbackend.domain.project.dto.mapper;
+package com.techeer.inforplanbackend.domain.task.dto.mapper;
 
-import com.techeer.inforplanbackend.domain.project.domain.entity.Task;
-import com.techeer.inforplanbackend.domain.project.dto.response.TaskResponseDto;
-import com.techeer.inforplanbackend.domain.project.repository.TaskRepository;
-import com.techeer.inforplanbackend.domain.project.dto.request.TaskRequestDto;
+import com.techeer.inforplanbackend.domain.task.dto.request.TaskRequestDto;
+import com.techeer.inforplanbackend.domain.task.dto.response.TaskResponseDto;
+import com.techeer.inforplanbackend.domain.task.entity.Task;
+import com.techeer.inforplanbackend.domain.task.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component

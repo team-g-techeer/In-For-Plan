@@ -1,17 +1,16 @@
-package com.techeer.inforplanbackend.domain.project.service;
+package com.techeer.inforplanbackend.domain.task.service;
 
-import com.techeer.inforplanbackend.domain.project.domain.entity.Task;
-import com.techeer.inforplanbackend.domain.project.dto.mapper.TaskMapper;
-import com.techeer.inforplanbackend.domain.project.dto.request.TaskRequestDto;
-import com.techeer.inforplanbackend.domain.project.dto.response.TaskResponseDto;
-import com.techeer.inforplanbackend.domain.project.repository.TaskRepository;
+import com.techeer.inforplanbackend.domain.task.dto.mapper.TaskMapper;
+import com.techeer.inforplanbackend.domain.task.dto.request.TaskRequestDto;
+import com.techeer.inforplanbackend.domain.task.dto.response.TaskResponseDto;
+import com.techeer.inforplanbackend.domain.task.entity.Task;
+import com.techeer.inforplanbackend.domain.task.repository.TaskRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor

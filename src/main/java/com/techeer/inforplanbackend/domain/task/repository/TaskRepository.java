@@ -1,11 +1,9 @@
-package com.techeer.inforplanbackend.domain.project.repository;
+package com.techeer.inforplanbackend.domain.task.repository;
 
-import com.techeer.inforplanbackend.domain.project.domain.entity.Task;
-import com.techeer.inforplanbackend.domain.project.dto.request.TaskRequestDto;
+import com.techeer.inforplanbackend.domain.task.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {

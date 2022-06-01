@@ -1,4 +1,4 @@
-package com.techeer.inforplanbackend.domain.project.domain.entity;
+package com.techeer.inforplanbackend.domain.task.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
