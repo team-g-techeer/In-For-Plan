@@ -6,7 +6,7 @@ import lombok.Getter;
 
 import java.time.LocalDate;
 
-@Getter   //Dto엔 getter 안됨
+@Getter   //Dto엔 setter 안됨
 @Builder
 @AllArgsConstructor    //클래스에 존재하는 모든 필드에 대한 생성자를 자동으로 생성해줌
 public class TaskResponseDto {
