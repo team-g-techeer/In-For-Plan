@@ -11,4 +11,6 @@ import lombok.RequiredArgsConstructor;
 public class BoardListRequestDto {
 
     public String boardList_title;
+
+    public Long project_id;
 }
