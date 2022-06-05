@@ -1,4 +1,4 @@
-package com.techeer.inforplanbackend.global.config;
+package com.techeer.inforplanbackend.global.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -54,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .authorizeRequests().antMatchers("/api/v1/users/login", "/api/v1/users").permitAll()
+                .authorizeRequests().antMatchers("/api/v1/**", "/v3/api-docs/**", "/swagger-ui/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling()

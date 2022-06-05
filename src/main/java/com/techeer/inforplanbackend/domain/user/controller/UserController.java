@@ -7,7 +7,7 @@ import com.techeer.inforplanbackend.domain.user.dto.Request.UserCreateRequestDto
 import com.techeer.inforplanbackend.domain.user.dto.Response.JwtResponse;
 import com.techeer.inforplanbackend.domain.user.dto.Response.UserResponseDto;
 import com.techeer.inforplanbackend.domain.user.service.UserService;
-import com.techeer.inforplanbackend.global.config.JwtTokenUtil;
+import com.techeer.inforplanbackend.global.security.JwtTokenUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
