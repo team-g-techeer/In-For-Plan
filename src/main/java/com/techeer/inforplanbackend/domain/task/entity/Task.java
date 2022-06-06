@@ -1,4 +1,4 @@
-package com.techeer.inforplanbackend.domain.project.domain.entity;
+package com.techeer.inforplanbackend.domain.task.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -58,6 +58,17 @@ public class Task {
     public Task(Long list_id, Long project_id, String description, Date start_date, Date end_date, String file_url, String task_title) {
         this.list_id = list_id;
         this.project_id = project_id;
+        this.description = description;
+        this.start_date = start_date;
+        this.created_at = LocalDate.now();
+        this.end_date = end_date;
+        this.updated_at = LocalDate.now();
+        this.file_url = file_url;
+        this.task_title = task_title;
+    }
+
+    public void update(Long list_id, String description, Date start_date, Date end_date, String file_url, String task_title) {
+        this.list_id = list_id;     //drag and drop으로 인한 list 값 변경
         this.description = description;
         this.start_date = start_date;
         this.created_at = LocalDate.now();

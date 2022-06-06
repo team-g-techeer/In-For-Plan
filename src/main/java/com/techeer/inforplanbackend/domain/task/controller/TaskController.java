@@ -1,41 +1,49 @@
-package com.techeer.inforplanbackend.domain.project.controller;
+package com.techeer.inforplanbackend.domain.task.controller;
 
-import com.techeer.inforplanbackend.domain.project.domain.entity.Task;
-import com.techeer.inforplanbackend.domain.project.dto.mapper.TaskMapper;
-import com.techeer.inforplanbackend.domain.project.dto.request.TaskRequestDto;
-import com.techeer.inforplanbackend.domain.project.dto.response.TaskResponseDto;
-import com.techeer.inforplanbackend.domain.project.service.TaskService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.validation.annotation.Validated;
+
+import com.techeer.inforplanbackend.domain.task.dto.mapper.TaskMapper;
+import com.techeer.inforplanbackend.domain.task.dto.request.TaskRequestDto;
+import com.techeer.inforplanbackend.domain.task.dto.response.TaskResponseDto;
+import com.techeer.inforplanbackend.domain.task.entity.Task;
+import com.techeer.inforplanbackend.domain.task.service.TaskService;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/v1/projects/{project-id}", method={RequestMethod.GET, RequestMethod.POST})
+@AllArgsConstructor
+@RequestMapping(value = "/api/v1")
 public class TaskController {
-    @Autowired public TaskService taskService;
-    @Autowired public TaskMapper taskMapper;
+    public final TaskService taskService;
+    public final TaskMapper taskMapper;
 
-    @PostMapping("/tasks")   //test not ok
-    @ResponseBody
+    @PostMapping("/tasks")
     public TaskResponseDto create(@RequestBody TaskRequestDto taskRequestDto) {
         Task task = taskService.create(taskRequestDto);
         return taskMapper.fromEntity(task);
     }
 
     @GetMapping
-    @ResponseBody
-    public List<Task> all() {    //test ok
-        List<Task> tasks = taskService.all();
-        return tasks;
+    public List<Task> all() {
+        List<Task> task = taskService.all();
+        return task;
     }
 
+    @DeleteMapping("/tasks/{task_id}")
+    public String delete(@PathVariable Long task_id) {
+        taskService.deleteById(task_id);
+        return "삭제된 task의 id : " + task_id;
+    }
 
-//    @GetMapping("/api")   //test ok
-//    @ResponseBody
-//    public String test() {
-//        return "hello world";
-//    }
+    @GetMapping("/tasks/{task_id}")
+    public TaskResponseDto find(@PathVariable Long task_id) {
+        return taskService.findById(task_id);
+    }
+
+    @PutMapping("/tasks/{task_id}")
+    public TaskResponseDto update(@PathVariable Long task_id, @RequestBody TaskRequestDto taskRequestDto) {
+        taskService.update(task_id, taskRequestDto);
+        return taskService.findById(task_id);
+    }
 }

@@ -1,10 +1,14 @@
 spring:
   profiles:
     include:
-      #- h2
-      - postgre
+      - h2
       - oauth
+#      - postgre
+#      - security
 
+  main:
+    allow-circular-references: true
+    
   jpa:
     hibernate:
       ddl-auto: update
