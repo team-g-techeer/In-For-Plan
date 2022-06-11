@@ -1,4 +1,4 @@
-package com.techeer.inforplanbackend.global.config;
+package com.techeer.inforplanbackend.global.security;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

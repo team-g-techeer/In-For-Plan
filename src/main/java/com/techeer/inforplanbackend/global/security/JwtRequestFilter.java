@@ -1,4 +1,4 @@
-package com.techeer.inforplanbackend.global.config;
+package com.techeer.inforplanbackend.global.security;
 
 import com.techeer.inforplanbackend.domain.user.service.UserService;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -31,7 +31,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     private static final List<String> EXCLUDE_URL =
             Collections.unmodifiableList(
                     Arrays.asList(
-                        "/api/member",
+                        "/swagger-ui/index.html",
                         "/authenticate"
                     ));
 
