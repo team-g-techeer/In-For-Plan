@@ -1,4 +1,4 @@
-package com.techeer.inforplanbackend.domain.user.dto.Response;
+package com.techeer.inforplanbackend.domain.user.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
