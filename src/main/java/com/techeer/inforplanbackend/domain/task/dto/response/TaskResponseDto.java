@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 @Getter
 @Builder
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class TaskResponseDto {
     public Long task_id;
 
