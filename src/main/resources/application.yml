@@ -4,6 +4,11 @@ spring:
       - h2
 #      - postgre
 #      - security
+  mvc:
+    hiddenmethod:
+        filter:
+          enabled: true
+
 
   main:
     allow-circular-references: true

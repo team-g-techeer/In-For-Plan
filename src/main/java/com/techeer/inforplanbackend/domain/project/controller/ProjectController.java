@@ -4,44 +4,68 @@ import com.techeer.inforplanbackend.domain.project.dto.Request.ProjectRequestDto
 import com.techeer.inforplanbackend.domain.project.dto.Response.ProjectResponseDto;
 import com.techeer.inforplanbackend.domain.project.entity.Project;
 import com.techeer.inforplanbackend.domain.project.service.ProjectService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/v1")
-@AllArgsConstructor
-public class    ProjectController {
+    @RequestMapping("api/v1")
+    @RequiredArgsConstructor
+    public class ProjectController {
 
-    private ProjectService projectService;
-    private ProjectMapper projectMapper;
+    private final ProjectService projectService;
+
+    private final ProjectMapper projectMapper;
     @PostMapping("/projects")
-    public ProjectResponseDto saveProject(@RequestBody ProjectRequestDto dto)
+    public ProjectResponseDto saveProject(@RequestBody ProjectRequestDto dto) throws Exception
     {
-        Project project = projectService.save(dto);
-        return projectMapper.fromEntity(project);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String email = ((User) auth.getPrincipal()).getUsername();
+        System.out.println(email);
+        System.out.println(dto.project_title);
+        if(email!=null) {
+            Project project = projectService.save(dto, email);
+            return projectMapper.fromEntity(project);
+        }else
+        {
+            return null;
+        }
+
     }
 
-    @DeleteMapping("/projects/{project_id}")
+    @DeleteMapping("/project/{project_id}")
     public ResponseEntity deleteProject(@PathVariable("project_id") Long id)
     {
-        projectService.deleteProject(id);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String email = ((User) auth.getPrincipal()).getUsername();
+        System.out.println("-----------------" +id +"---------------");
+        projectService.deleteProject(id,email);
         return ResponseEntity.ok(id);
     }
 
-    @PutMapping("/projects/{project_id}")
-    public ResponseEntity update(@PathVariable("project_id")Long id, @RequestBody ProjectResponseDto dto)
+    @PutMapping("/project/{project_id}")
+    public ResponseEntity update(@PathVariable("project_id") Long id,@RequestBody ProjectRequestDto dto)
     {
-        projectService.updateProject(id, dto);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String email = ((User)auth.getPrincipal()).getUsername();
+        projectService.updateProject(id,email,dto);
         return ResponseEntity.ok(id);
+
     }
 
     @GetMapping("/projects/all")
     public List<Project> findall(){
-        List<Project> all = projectService.findall();
-        return all;
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String email = ((User)auth.getPrincipal()).getUsername();
+        List<Project> projectlist = projectService.findall(email);
+        System.out.println(email+"123124124124124124124124");
+        System.out.println(projectlist);
+        return projectlist;
     }
 
     @GetMapping("/projects/{project_id}")

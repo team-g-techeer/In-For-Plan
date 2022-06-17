@@ -5,6 +5,7 @@ import com.techeer.inforplanbackend.global.common.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 
 import javax.persistence.*;
