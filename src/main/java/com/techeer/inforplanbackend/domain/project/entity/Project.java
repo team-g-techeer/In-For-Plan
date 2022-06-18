@@ -13,31 +13,29 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED) //기본 생성자 자동 추가, 기본 생성자의 접근 권한을 protected로 제한
 public class Project extends BaseTimeEntity {
 
-    @Id @GeneratedValue //@Id:해당 테이블의 pk임을 나타냄 @GeneratedValue : PK의 생성 규칙을 나타냄
-    @Column(name= "project_id")
+    @Id
+    @GeneratedValue //@Id:해당 테이블의 pk임을 나타냄 @GeneratedValue : PK의 생성 규칙을 나타냄
+    @Column(name = "project_id")
     private Long id;
 
     @Column(name = "project_title", nullable = false)
     private String project_title;
 
     @Column(name = "url", nullable = false)
-      private String url;
+    private String url;
 
     @Column(name = "meet_date") //yyyy-mm-dd
-      private Date meet_date;
-    
+    private Date meet_date;
 
 
     @Builder
-    public Project(String project_title,String url,Date meet_date)
-    {
+    public Project(String project_title, String url, Date meet_date) {
         this.project_title = project_title;
         this.url = url;
         this.meet_date = meet_date;
     }
 
-    public void update(String project_title,String url,Date meet_date)
-    {
+    public void update(String project_title, String url, Date meet_date) {
         this.project_title = project_title;
         this.url = url;
         this.meet_date = meet_date;
