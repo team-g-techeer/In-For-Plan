@@ -1,19 +1,19 @@
 package com.techeer.inforplanbackend.domain.user.config.auth;
 
-import com.techeer.inforplanbackend.domain.user.domain.entity.SocialUsers;
+import com.techeer.inforplanbackend.domain.user.domain.entity.SocialUser;
 import lombok.Getter;
+
 import java.io.Serializable;
 
 @Getter
-public class SessionUsers implements Serializable {
-
+public class SessionUser implements Serializable {
     private String name;
     private String email;
     private String picture;
 
-    public SessionUsers(SocialUsers users){
+    public SessionUser(SocialUser users){
         this.name = users.getName();
         this.email = users.getEmail();
-        this.picture = users.getUrl();
+        this.picture = users.getPicture();
     }
 }

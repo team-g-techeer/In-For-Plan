@@ -1,4 +1,4 @@
-package com.techeer.inforplanbackend.global.config;
+package com.techeer.inforplanbackend.global.security;
 
 import com.techeer.inforplanbackend.domain.user.domain.entity.Users;
 import com.techeer.inforplanbackend.domain.user.repository.UserRepository;

@@ -1,4 +1,4 @@
-<h1>스프링 부트로 시작하는 웹 서비스</h1>
+<h1>구글 로그인 서비스 테스트</h1>
 <div class="col-md-12">
     <div class="row">
         <div class="col-md-6">
@@ -8,7 +8,7 @@
                 <a href="/logout" class="btn btn-info active" role="button">Logout</a>
             {{/userName}}
             {{^userName}}
-                <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                <a href="https://accounts.google.com/o/oauth2/auth?client_id=457190401330-d0kdd9mkfr8gptk868o0a89oorlvrnre.apps.googleusercontent.com&redirect_uri=http://localhost:8080/login/oauth2/code/google&response_type=code&scope=https://www.googleapis.com/auth/drive.metadata.readonly" class="btn btn-success active" role="button">Google Login</a>
             {{/userName}}
         </div>
     </div>

@@ -1,9 +1,9 @@
 spring:
   profiles:
     include:
-      - h2
+#      - h2
+      - postgre
       - oauth
-#      - postgre
 #      - security
 
   main:

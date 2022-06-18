@@ -2,6 +2,7 @@
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
+application-oauth.properties
 
 ### STS ###
 .apt_generated

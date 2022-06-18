@@ -1,14 +1,12 @@
 package com.techeer.inforplanbackend.domain.user.config.auth;
 
-import com.techeer.inforplanbackend.domain.user.domain.entity.Role;
-import com.techeer.inforplanbackend.domain.user.domain.entity.SocialUsers;
-import com.techeer.inforplanbackend.domain.user.domain.entity.Users;
+import com.techeer.inforplanbackend.domain.user.domain.entity.SocialRole;
+import com.techeer.inforplanbackend.domain.user.domain.entity.SocialUser;
 import lombok.Builder;
 import lombok.Getter;
 
 import java.text.ParseException;
 import java.util.Map;
-
 @Getter
 public class OAuthAttributes {
     private Map<String, Object> attributes;
@@ -47,12 +45,12 @@ public class OAuthAttributes {
     }
 
 
-    public SocialUsers toEntity() throws ParseException {
-        return SocialUsers.builder()
+    public SocialUser toEntity() throws ParseException {
+        return SocialUser.builder()
                 .name(name)
                 .email(email)
-                .url(url)
-                .user_role(Role.USER)
+                .picture(url)
+                .role(SocialRole.GUEST)
                 .build();
     }
 }

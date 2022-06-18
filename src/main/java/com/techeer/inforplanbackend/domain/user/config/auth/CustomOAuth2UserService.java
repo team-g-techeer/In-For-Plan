@@ -1,8 +1,9 @@
 package com.techeer.inforplanbackend.domain.user.config.auth;
 
-import com.techeer.inforplanbackend.domain.user.domain.entity.SocialUsers;
+import com.techeer.inforplanbackend.domain.user.domain.entity.SocialUser;
 import com.techeer.inforplanbackend.domain.user.repository.SocialUserRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.catalina.User;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -19,7 +20,7 @@ import java.util.Collections;
 @RequiredArgsConstructor
 @Service
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
-    private final SocialUserRepository socialUserRepository;
+    private final SocialUserRepository userRepository;
     private final HttpSession httpSession;
 
 
@@ -34,13 +35,13 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 
-        SocialUsers users = null;
+        SocialUser users = null;
         try {
             users = saveOrUpdate(attributes);
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        httpSession.setAttribute("user", new SessionUsers(users));
+        httpSession.setAttribute("user", new SessionUser(users));
 
         return new DefaultOAuth2User(
                 Collections.singleton(new SimpleGrantedAuthority(users.getRoleKey())),
@@ -48,11 +49,11 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
                 attributes.getNameAttributeKey());
     }
 
-    private SocialUsers saveOrUpdate(OAuthAttributes attributes) throws ParseException {
-        SocialUsers users = socialUserRepository.findByEmail(attributes.getEmail())
+    private SocialUser saveOrUpdate(OAuthAttributes attributes) throws ParseException {
+        SocialUser users = userRepository.findByEmail(attributes.getEmail())
                 .map(entity->entity.update(attributes.getName(), attributes.getUrl()))
                 .orElse(attributes.toEntity());
 
-        return socialUserRepository.save(users);
+        return userRepository.save(users);
     }
 }

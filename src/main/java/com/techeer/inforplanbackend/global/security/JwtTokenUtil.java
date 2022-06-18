@@ -1,4 +1,4 @@
-package com.techeer.inforplanbackend.global.config;
+package com.techeer.inforplanbackend.global.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
