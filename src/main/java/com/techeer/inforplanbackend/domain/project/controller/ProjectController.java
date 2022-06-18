@@ -1,8 +1,8 @@
 package com.techeer.inforplanbackend.domain.project.controller;
 
-import com.techeer.inforplanbackend.domain.project.dto.Mapper.ProjectMapper;
-import com.techeer.inforplanbackend.domain.project.dto.Request.ProjectRequestDto;
-import com.techeer.inforplanbackend.domain.project.dto.Response.ProjectResponseDto;
+import com.techeer.inforplanbackend.domain.project.dto.mapper.ProjectMapper;
+import com.techeer.inforplanbackend.domain.project.dto.request.ProjectRequestDto;
+import com.techeer.inforplanbackend.domain.project.dto.response.ProjectResponseDto;
 import com.techeer.inforplanbackend.domain.project.entity.Project;
 import com.techeer.inforplanbackend.domain.project.service.ProjectService;
 import lombok.AllArgsConstructor;
@@ -39,13 +39,13 @@ public class ProjectController {
     }
 
     @GetMapping("/projects/all")
-    public List<Project> findall() {
-        return projectService.findall();
+    public List<Project> findAll() {
+        return projectService.findAll();
     }
 
     @GetMapping("/projects/{project_id}")
-    public Optional<Project> findbyid(@PathVariable("project_id") Long id) {
-        return projectService.findbyid(id);
+    public Optional<Project> findById(@PathVariable("project_id") Long id) {
+        return projectService.findbyId(id);
     }
 
 }

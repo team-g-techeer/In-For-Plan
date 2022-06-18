@@ -28,12 +28,12 @@ public class BoardListService {
     }
 
     @Transactional
-    public List<BoardList> findall(){
+    public List<BoardList> findAll(){
         return boardListRepository.findAll();
     }
 
     @Transactional
-    public Optional<BoardList> findbyid(Long id){
+    public Optional<BoardList> findById(Long id){
         try{
             Optional<BoardList> result = boardListRepository.findById(id);
             if(result.isPresent())

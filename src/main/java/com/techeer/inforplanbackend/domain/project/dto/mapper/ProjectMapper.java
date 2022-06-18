@@ -1,7 +1,7 @@
-package com.techeer.inforplanbackend.domain.project.dto.Mapper;
+package com.techeer.inforplanbackend.domain.project.dto.mapper;
 
-import com.techeer.inforplanbackend.domain.project.dto.Request.ProjectRequestDto;
-import com.techeer.inforplanbackend.domain.project.dto.Response.ProjectResponseDto;
+import com.techeer.inforplanbackend.domain.project.dto.request.ProjectRequestDto;
+import com.techeer.inforplanbackend.domain.project.dto.response.ProjectResponseDto;
 import com.techeer.inforplanbackend.domain.project.entity.Project;
 import com.techeer.inforplanbackend.domain.project.repository.ProjectRepository;
 import lombok.RequiredArgsConstructor;

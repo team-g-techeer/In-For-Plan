@@ -23,18 +23,15 @@ public class Members_Project {
     private Users users;
 
     @ManyToOne
-    @JoinColumn(name ="project_id")
+    @JoinColumn(name = "project_id")
     private Project project;
 
 
     @Builder
-    public Members_Project(Long id,Users users,Project project)
-    {
+    public Members_Project(Long id, Users users, Project project) {
         this.id = id;
         this.users = users;
         this.project = project;
     }
-
-
 
 }

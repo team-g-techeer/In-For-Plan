@@ -27,13 +27,13 @@ public class BoardListController {
     }
 
     @GetMapping("/boardLists")
-    public List<BoardList> findall() {
-        return boardListService.findall();
+    public List<BoardList> findAll() {
+        return boardListService.findAll();
     }
 
     @GetMapping("/boardLists/{boardList_id}")
-    public Optional<BoardList> findbyid(@PathVariable("boardList_id") Long id) {
-        return boardListService.findbyid(id);
+    public Optional<BoardList> findById(@PathVariable("boardList_id") Long id) {
+        return boardListService.findById(id);
     }
 
     @DeleteMapping("/boardLists/{boardList-id}")
