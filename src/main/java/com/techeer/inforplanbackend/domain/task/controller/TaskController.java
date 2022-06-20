@@ -26,8 +26,7 @@ public class TaskController {
 
     @GetMapping
     public List<Task> all() {
-        List<Task> task = taskService.all();
-        return task;
+        return taskService.all();
     }
 
     @DeleteMapping("/tasks/{task_id}")

@@ -3,12 +3,13 @@ package com.techeer.inforplanbackend.domain.task.dto.response;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDate;
 
-@Getter   //Dto엔 setter 안됨
+@Getter
 @Builder
-@AllArgsConstructor    //클래스에 존재하는 모든 필드에 대한 생성자를 자동으로 생성해줌
+@AllArgsConstructor
 public class TaskResponseDto {
     public Long task_id;
 

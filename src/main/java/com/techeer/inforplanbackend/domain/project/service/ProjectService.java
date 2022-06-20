@@ -1,8 +1,8 @@
 package com.techeer.inforplanbackend.domain.project.service;
 
-import com.techeer.inforplanbackend.domain.project.dto.Mapper.ProjectMapper;
-import com.techeer.inforplanbackend.domain.project.dto.Request.ProjectRequestDto;
-import com.techeer.inforplanbackend.domain.project.dto.Response.ProjectResponseDto;
+import com.techeer.inforplanbackend.domain.project.dto.mapper.ProjectMapper;
+import com.techeer.inforplanbackend.domain.project.dto.request.ProjectRequestDto;
+import com.techeer.inforplanbackend.domain.project.dto.response.ProjectResponseDto;
 import com.techeer.inforplanbackend.domain.project.entity.Project;
 import com.techeer.inforplanbackend.domain.project.repository.ProjectRepository;
 import lombok.AllArgsConstructor;
@@ -46,12 +46,13 @@ public class ProjectService {
 
     }
     @Transactional
-    public List<Project> findall()
+    public List<Project> findAll()
     {
         return projectRepository.findAll();
     }
+
     @Transactional
-    public Optional<Project> findbyid(Long id)
+    public Optional<Project> findbyId(Long id)
     {
         try{
             Optional<Project> result = projectRepository.findById(id);

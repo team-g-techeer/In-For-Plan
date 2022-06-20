@@ -1,11 +1,11 @@
 package com.techeer.inforplanbackend.domain.user.controller;
 
 import com.techeer.inforplanbackend.domain.user.domain.entity.Users;
-import com.techeer.inforplanbackend.domain.user.dto.Mapper.UserMapper;
-import com.techeer.inforplanbackend.domain.user.dto.Request.JwtRequest;
-import com.techeer.inforplanbackend.domain.user.dto.Request.UserCreateRequestDto;
-import com.techeer.inforplanbackend.domain.user.dto.Response.JwtResponse;
-import com.techeer.inforplanbackend.domain.user.dto.Response.UserResponseDto;
+import com.techeer.inforplanbackend.domain.user.dto.mapper.UserMapper;
+import com.techeer.inforplanbackend.domain.user.dto.request.JwtRequest;
+import com.techeer.inforplanbackend.domain.user.dto.request.UserCreateRequestDto;
+import com.techeer.inforplanbackend.domain.user.dto.response.JwtResponse;
+import com.techeer.inforplanbackend.domain.user.dto.response.UserResponseDto;
 import com.techeer.inforplanbackend.domain.user.service.UserService;
 import com.techeer.inforplanbackend.global.security.JwtTokenUtil;
 import lombok.RequiredArgsConstructor;

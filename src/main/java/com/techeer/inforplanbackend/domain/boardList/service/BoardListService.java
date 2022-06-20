@@ -1,13 +1,12 @@
 package com.techeer.inforplanbackend.domain.boardList.service;
 
-import com.techeer.inforplanbackend.domain.boardList.dto.Mapper.BoardListMapper;
-import com.techeer.inforplanbackend.domain.boardList.dto.Request.BoardListRequestDto;
-import com.techeer.inforplanbackend.domain.boardList.dto.Response.BoardListResponseDto;
+import com.techeer.inforplanbackend.domain.boardList.dto.mapper.BoardListMapper;
+import com.techeer.inforplanbackend.domain.boardList.dto.request.BoardListRequestDto;
+import com.techeer.inforplanbackend.domain.boardList.dto.response.BoardListResponseDto;
 import com.techeer.inforplanbackend.domain.boardList.entity.BoardList;
 import com.techeer.inforplanbackend.domain.boardList.repository.BoardListRepository;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -15,7 +14,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Service
 public class BoardListService {
 
@@ -29,12 +28,12 @@ public class BoardListService {
     }
 
     @Transactional
-    public List<BoardList> findall(){
+    public List<BoardList> findAll(){
         return boardListRepository.findAll();
     }
 
     @Transactional
-    public Optional<BoardList> findbyid(Long id){
+    public Optional<BoardList> findById(Long id){
         try{
             Optional<BoardList> result = boardListRepository.findById(id);
             if(result.isPresent())

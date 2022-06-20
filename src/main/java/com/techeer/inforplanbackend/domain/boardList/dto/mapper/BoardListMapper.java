@@ -1,7 +1,7 @@
-package com.techeer.inforplanbackend.domain.boardList.dto.Mapper;
+package com.techeer.inforplanbackend.domain.boardList.dto.mapper;
 
-import com.techeer.inforplanbackend.domain.boardList.dto.Request.BoardListRequestDto;
-import com.techeer.inforplanbackend.domain.boardList.dto.Response.BoardListResponseDto;
+import com.techeer.inforplanbackend.domain.boardList.dto.request.BoardListRequestDto;
+import com.techeer.inforplanbackend.domain.boardList.dto.response.BoardListResponseDto;
 import com.techeer.inforplanbackend.domain.boardList.entity.BoardList;
 import com.techeer.inforplanbackend.domain.boardList.repository.BoardListRepository;
 import lombok.RequiredArgsConstructor;

@@ -1,19 +1,14 @@
 package com.techeer.inforplanbackend.domain.boardList.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.techeer.inforplanbackend.domain.boardList.dto.Request.BoardListRequestDto;
 import com.techeer.inforplanbackend.domain.project.entity.Project;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @JsonAutoDetect
 public class BoardList extends  BaseTimeEntity{
 

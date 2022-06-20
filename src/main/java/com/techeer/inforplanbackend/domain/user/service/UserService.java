@@ -2,9 +2,9 @@ package com.techeer.inforplanbackend.domain.user.service;
 
 import com.techeer.inforplanbackend.domain.user.domain.entity.Role;
 import com.techeer.inforplanbackend.domain.user.domain.entity.Users;
-import com.techeer.inforplanbackend.domain.user.dto.Mapper.UserMapper;
-import com.techeer.inforplanbackend.domain.user.dto.Request.UserCreateRequestDto;
-import com.techeer.inforplanbackend.domain.user.dto.Response.UserResponseDto;
+import com.techeer.inforplanbackend.domain.user.dto.mapper.UserMapper;
+import com.techeer.inforplanbackend.domain.user.dto.request.UserCreateRequestDto;
+import com.techeer.inforplanbackend.domain.user.dto.response.UserResponseDto;
 import com.techeer.inforplanbackend.domain.user.repository.UserRepository;
 import com.techeer.inforplanbackend.global.error.exception.BusinessException;
 import lombok.RequiredArgsConstructor;

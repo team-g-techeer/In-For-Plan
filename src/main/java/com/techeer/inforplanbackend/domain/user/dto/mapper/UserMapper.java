@@ -1,9 +1,9 @@
-package com.techeer.inforplanbackend.domain.user.dto.Mapper;
+package com.techeer.inforplanbackend.domain.user.dto.mapper;
 
 
 import com.techeer.inforplanbackend.domain.user.domain.entity.Users;
-import com.techeer.inforplanbackend.domain.user.dto.Request.UserCreateRequestDto;
-import com.techeer.inforplanbackend.domain.user.dto.Response.UserResponseDto;
+import com.techeer.inforplanbackend.domain.user.dto.request.UserCreateRequestDto;
+import com.techeer.inforplanbackend.domain.user.dto.response.UserResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
