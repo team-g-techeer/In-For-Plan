@@ -33,41 +33,41 @@ Last Edited Time: 2022년 8월 13일 오후 4:10
 
 ## 회원가입
 
-![Untitled](readme%20adc054e78fda4a669ef9d2ad0ffa3c1d/Untitled.png)
+![image](https://user-images.githubusercontent.com/96467030/184610401-cc0e57c2-8588-42ef-a730-d75eb82cc458.png)
 
 - Google Oauth 회원가입과 기본 회원가입이 사용가능합니다.
 
 ## 로그인 화면
 
-![Untitled](readme%20adc054e78fda4a669ef9d2ad0ffa3c1d/Untitled%201.png)
+![image](https://user-images.githubusercontent.com/96467030/184610437-2b1747c8-7878-4157-9eba-e36090ff12c3.png)
 
 ## 메인 페이지
 
-![Untitled](readme%20adc054e78fda4a669ef9d2ad0ffa3c1d/Untitled%202.png)
+![image](https://user-images.githubusercontent.com/96467030/184610477-b0ce142c-8e06-49bf-ad8a-2e153f260a10.png)
 
 - 메인페이지에서 달력을 통해 지난 일정 및 남은 일정을 확인할 수 있고, 오늘 예정된 일정 이나 To Do List, Project 를 확인할 수 있습니다.
 
 ## 프로젝트 페이지
 
-![Untitled](readme%20adc054e78fda4a669ef9d2ad0ffa3c1d/Untitled%203.png)
+![image](https://user-images.githubusercontent.com/96467030/184610537-adbb3a83-20f0-447c-8faf-635c13362baa.png)
 
 - 칸반 보드를 사용하여 프로젝트내의 Task를 구분할 수 있으며, 회의 일정을 설정 할 수 있습니다.
 
 ## 칸반 보드 페이지
 
-![Untitled](readme%20adc054e78fda4a669ef9d2ad0ffa3c1d/Untitled%204.png)
+![image](https://user-images.githubusercontent.com/96467030/184610590-b98f6138-86e3-4683-8048-a8905ef0fce1.png)
 
 - 칸반 보드 내에서는 멤버 추가,  파일 업로드 , Label 추가, 댓글작성, check list 추가, member mention 기능을 사용할 수 있습니다.
 
 ## 회의 시간 설정 페이지
 
-![Untitled](readme%20adc054e78fda4a669ef9d2ad0ffa3c1d/Untitled%205.png)
+![image](https://user-images.githubusercontent.com/96467030/184610632-05eb2df0-6749-431c-9250-7f19d73a94d4.png)
 
 - 회의 시간을 정하기 위해 외국에 있는 member의 시차를 계산할 필요없이 한눈에 공통된 시간을 확인할 수 있습니다.
 
 ## System Architecture
 
-![Untitled](readme%20adc054e78fda4a669ef9d2ad0ffa3c1d/Untitled%206.png)
+![image](https://user-images.githubusercontent.com/96467030/184610719-4121b941-097a-4bf0-8aca-3690eb89e9f8.png)
 
 ## 실제 구현 서비스
 
