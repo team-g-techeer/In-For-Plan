@@ -108,5 +108,5 @@ Last Edited Time: 2022년 8월 13일 오후 4:10
 | --- | --- | --- |
 | 맹수연  |  |  |
 | 유희진 | Frontend, Backend |  |
-| 임성한  |  |  |
+| 임성한  | Backend,DevOps  |  |
 | 최세연 |  |  |
