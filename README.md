@@ -2,7 +2,7 @@
 # readme
 
 Created: 2022년 8월 11일 오후 8:50
-Last Edited Time: 2022년 8월 13일 오후 4:10
+Last Edited Time: 2022년 10월 15일 오후 9:24
 
 # InForPlan
 
@@ -106,7 +106,7 @@ Last Edited Time: 2022년 8월 13일 오후 4:10
 
 | 이름  | 역할 | Github |
 | --- | --- | --- |
-| 맹수연  |  |  |
+| 맹수연  | Backend |  |
 | 유희진 | Frontend, Backend |  |
 | 임성한  | Backend,DevOps  |  |
-| 최세연 |  |  |
+| 최세연 | Backend |  |
